@@ -1,4 +1,4 @@
-app.service('State', ($state, $stateParams, $timeout, $q) => {
+app.service('State', ($state, $stateParams, $timeout, $q, $rootScope) => {
 
     var currentAuth = 3, sidebarActive = false;
 
@@ -33,7 +33,7 @@ app.service('State', ($state, $stateParams, $timeout, $q) => {
 
     init();
 
-    return {
+    var State = {
         verify,
         getAuth,
         isRecruiter,
@@ -41,6 +41,9 @@ app.service('State', ($state, $stateParams, $timeout, $q) => {
         isSidebarActive: () => sidebarActive,
         showSidebar: () => sidebarActive = true,
         hideSidebar: () => sidebarActive = false
-    }
+    };
+
+    _.extend($rootScope, {State});
+    return State;
 });
 

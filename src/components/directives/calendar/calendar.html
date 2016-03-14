@@ -1,13 +1,29 @@
 <script type="text/ng-template" id="calendar.html">
     <div class="calendar">
-        <div class="calendar-banner" ng-class="{small:!calendar.img}">
-            <div class="banner-overlay">
-                <img src="http://patrickbeser.com/img/portrait-2015.jpg" alt="" ng-if="calendar.img">
-                {{calendar.heading}}
-                <div class="sub" ng-if="calendar.subheading">{{calendar.subheading}}</div>
+        <div class="container">
+            <div class="box start">
+                <div class="calendar-title">
+                    <div class="calendar-prev" ng-click="calendar.changeWeek(-7)"><i class="fa fa-angle-left"></i></div>
+
+                    <div class="calendar-week">
+                        {{calendar.getWeek()}} - {{calendar.getWeek(6)}}
+                    </div>
+
+                    <div class="calendar-next" ng-click="calendar.changeWeek(7)"><i class="fa fa-angle-right"></i></div>
+
+                </div>
+
+
+                <div class="appointment" ng-repeat="app in calendar.getAppointments()" ng-show="calendar.isValid(app[0])">
+                    <div class="day">{{calendar.getDay(app[0])}}</div>
+                    <div class="date">{{calendar.getDate(app[0])}}</div>
+                    <div class="with">{{app[1]}} <span>{{app[2]}}</span></div>
+
+                </div>
+
             </div>
-
-
         </div>
+
+
     </div>
 </script>

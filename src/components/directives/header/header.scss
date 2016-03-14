@@ -27,10 +27,12 @@ header-item {
       text-align: center;
       margin-left: -15px;
       transform: translateX(-50px);
+      opacity: 0;
       transition: .3s;
 
       &.active {
         transform: translateX(0);
+        opacity: 1;
       }
     }
 

@@ -38,6 +38,12 @@ app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
             controller: 'NewScreen',
             resolve
         })
+        .state('calendar', {
+            url: "/user/:id/calendar",
+            templateUrl: "calendar-screen.html",
+            controller: 'CalendarScreen',
+            resolve
+        })
         .state('documents', {
             url: "/user/:id/documents",
             templateUrl: "documents-screen.html",
@@ -57,7 +63,7 @@ app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
             resolve
         })
         .state('verify', {
-            url: "/verify/:id",
+            url: "/user/:id/verify",
             templateUrl: "verify-screen.html",
             controller: 'VerifyScreen',
             resolve

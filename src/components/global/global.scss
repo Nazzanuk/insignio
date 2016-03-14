@@ -1,4 +1,4 @@
-$body: #444444;
+$body: #555;
 $primary: #2d84c4;
 $secondary: #639e42;
 $light: #EEF7FF;
@@ -23,6 +23,7 @@ html, body {
   overflow-x: hidden;
   //background: $body;
   background: $light;
+  color: $body;
 
 }
 
@@ -30,6 +31,7 @@ input, textarea {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   font-weight: 400;
+  color: $body;
 
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -42,6 +44,24 @@ body {
   //font-size: 16px;
   font-weight: 400;
   background: $light;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.97);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  //flex-wrap: wrap;
+  margin: 15px 0px 0px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+
+  //padding: 15px;
+
+  &.start {
+    margin: -15px 0px 0px;
+  }
 }
 
 h1, h2, h3 {
